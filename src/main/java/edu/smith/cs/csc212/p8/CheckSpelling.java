@@ -204,7 +204,7 @@ public class CheckSpelling {
 		timeLookup(book, bsl);
 		timeLookup(book, trie);
 		timeLookup(book, hm100k);
-		System.out.println("The mis-spelled words are " + misspelled(book, treeOfWords));
+//		System.out.println("The mis-spelled words are " + misspelled(book, treeOfWords));
 		System.out.println("-------------------------------------");
 		
 		System.out.println("Done!");
