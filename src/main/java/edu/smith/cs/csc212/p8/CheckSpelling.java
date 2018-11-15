@@ -71,7 +71,7 @@ public class CheckSpelling {
 	 */
 	public static void timeLookup(List<String> words, Collection<String> dictionary) {
 		long startLookup = System.nanoTime();
-		List<String> mixed = new ArrayList<>();
+		
 		int found = 0;
 		for (String w : words) {
 			if (dictionary.contains(w)) {
@@ -137,7 +137,7 @@ public class CheckSpelling {
 		System.out.println("CharTrie: fill up takes "+ (endCharTime-startCharTime)/1e9 + " seconds");
 		
 		long startLHTime = System.nanoTime();
-		LLHash hm100k = new LLHash(100000);
+		LLHash hm100k = new LLHash(200000);
 		for (String w : listOfWords) {
 			hm100k.add(w);
 		}
@@ -204,7 +204,7 @@ public class CheckSpelling {
 		timeLookup(book, bsl);
 		timeLookup(book, trie);
 		timeLookup(book, hm100k);
-//		System.out.println("The mis-spelled words are " + misspelled(book, treeOfWords));
+		System.out.println("The mis-spelled words are " + misspelled(book, treeOfWords));
 		System.out.println("-------------------------------------");
 		
 		System.out.println("Done!");

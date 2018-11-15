@@ -75,6 +75,7 @@ public class CharTrie extends AbstractSet<String> {
 		}
 		
 		/**
+		 * notice: insert method in node has recursion inside!
 		 * Insert a word in this trie (or a suffix of a word, because recursion).
 		 * @param chars - a list of characters that used to be a word.
 		 */
@@ -120,16 +121,28 @@ public class CharTrie extends AbstractSet<String> {
 		 */
 		public int countNodes() {
 			int count = 1;
-			int i = 0;
-			if(links[i] == null){
-				return count;}
-			else {
-				count = count + 1;
-				i++;
-				
+			
+			for(int i=0;i<links.length;i++) {
+				if(links[i]!=null) {
+					count+=links[i].countNodes();
+				}else {
+					return count;
 				}
+			}
 			
-			
+//			int i = 0;
+//			while(i<28) {
+//				if(links[i] == null){
+//					continue;}
+//				else if(this.terminal = true){
+//					return count;
+//				}
+//				else {
+//					count++;
+//					links[i].countNodes();
+//					}
+//				i++;
+//			}
 			// loop over links
 			// if they're not null
 			// count them, too
