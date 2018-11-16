@@ -137,7 +137,7 @@ public class CheckSpelling {
 		System.out.println("CharTrie: fill up takes "+ (endCharTime-startCharTime)/1e9 + " seconds");
 		
 		long startLHTime = System.nanoTime();
-		LLHash hm100k = new LLHash(200000);
+		LLHash hm100k = new LLHash(100000);
 		for (String w : listOfWords) {
 			hm100k.add(w);
 		}

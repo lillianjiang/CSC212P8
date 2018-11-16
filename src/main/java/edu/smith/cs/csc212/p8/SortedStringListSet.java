@@ -54,7 +54,7 @@ public class SortedStringListSet extends AbstractSet<String> {
 
 		int mid;
 		while (start < end) {
-			mid = (start + end) / 2;
+			mid = start + (end-start) / 2;
 			if (query.compareTo(data.get(mid)) == 0) {
 				return mid;
 			} else if (query.compareTo(data.get(mid)) < 0) {
